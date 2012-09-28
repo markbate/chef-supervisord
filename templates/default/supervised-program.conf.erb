@@ -12,6 +12,4 @@ command = <%= @program.command %>
 
 <% if not @program.stopsignal.nil? %>stopsignal = <%= @program.stopsignal %><% end %>
 
-<% unless @prog.environment.empty? %>
-environment=<%= @prog.environment.map{|k,v| "#{k}=\"#{v}\""}.join(',') %>
-<% end %>
+<% unless @program.environment.empty? %>environment = <%= @program.environment.map{|k,v| "#{k}=\"#{v}\""}.join(',') %><% end %>
