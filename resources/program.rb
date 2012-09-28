@@ -15,5 +15,7 @@ attribute :stderr_logfile_maxbytes, :kind_of => String, :default => nil
 
 attribute :stopsignal, :equal_to => ["TERM", "HUP", "INT", "QUIT", "KILL", "USR1", "USR2"], :default => nil
 
+attribute :environment, :kind_of => Hash, :default => []
+
 # private
 attribute :service
