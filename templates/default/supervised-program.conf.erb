@@ -11,3 +11,7 @@ command = <%= @program.command %>
 <% if not @program.stderr_logfile_maxbytes.nil? %>stderr_logfile_maxbytes = <%= @program.stderr_logfile_maxbytes %><% end %>
 
 <% if not @program.stopsignal.nil? %>stopsignal = <%= @program.stopsignal %><% end %>
+
+<% unless @prog.environment.empty? %>
+environment=<%= @prog.environment.map{|k,v| "#{k}=\"#{v}\""}.join(',') %>
+<% end %>
